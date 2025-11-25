@@ -42,6 +42,16 @@ app.post("/salesiq/webhook", (req, res) => {
     }
 });
 
+app.post('/explore/area/book', (req,res)=>{
+    body = req.body;
+    console.log(body);
+    if(body.place && body.book_slot_here){
+        res.status(200).send("Booked successfully")
+    }else{
+        res.status(404).send("Please mention area");
+    }
+})
+
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
