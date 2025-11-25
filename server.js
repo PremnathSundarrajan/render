@@ -11,6 +11,12 @@ app.get('/bot',(req,res)=>{
 app.post('/explore',(req,res)=>{
     res.status(200).send("Great choice! 🌆 Here are the available parking locations you can explore. Each place includes details like total slots, nearby landmarks, and availability to help you choose the perfect spot. Just select a location to see more information or book a slot instantly!")
 })
+
+app.post('/explore/area',(req,res)=>{
+    body = req.body;
+    console.log(body);
+    res.status(200).send("20 parking areas");
+})
 app.post("/salesiq/webhook", (req, res) => {
     const body = req.body;
 
