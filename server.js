@@ -10,7 +10,7 @@ app.get('/',(req,res)=>{
 app.post("/salesiq/webhook", (req, res) => {
     const body = req.body;
 
-    if(bod.messasge == "fever"){
+    if(body.messasge == "Fever"){
         res.status(200).send("Don't worry, be hydrated. You will rectify soon");
     }else{    
     res.status(200).send(
