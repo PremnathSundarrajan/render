@@ -49,7 +49,7 @@ app.post('/explore/area/tambaram', (req,res)=>{
     // name of parking area will come and we will suggests the book a slot here
     console.log(body);
     if(body.area){
-        change= "Tambaram";
+        
         res.status(200).send("Can I book a slot here for you")
     }else{
         res.status(404).send("Please mention area");
@@ -61,17 +61,19 @@ app.post('/explore/area/chrompet', (req,res)=>{
     // name of parking area will come and we will suggests the book a slot here
     console.log(body);
     if(body.area){
-        change= "Chrompet";
+       
         res.status(200).send("Booked successfully")
     }else{
         res.status(404).send("Please mention area");
     }
 });
 app.post('/explore/area/book',(req,res)=>{
-    if(change == "Chrompet"){
-        res.status(200).send("Booked successfully");
-    }else if (change == "Tambaram"){
-         res.status(200).send("Booked Successfully");
+    const body = req.body;
+    
+    if(body.book_a_slot_here && body.book_a_slot_here == "Tambaram"){
+        res.status(200).send("Booked Tambaram slot successfully");
+    }else if (body.book_a_slot_here && body.book_a_slot_here =="Chrompet"){
+         res.status(200).send("Booked Chrompet slot Successfully");
     }else{
          res.status(404).send("Please mention area")
     }
