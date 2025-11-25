@@ -4,19 +4,28 @@ const PORT = 3000;
 
 // Parse JSON body
 app.use(express.json());
-
 app.post("/salesiq/webhook", (req, res) => {
     const body = req.body;
-    console.log(body);
+
     if(!body || !body.message){
         return res.status(400).json({ text: "Invalid request" });
     }
 
-    if(body === "{message=Fever}"
-){
-        res.status(200).json({ text: "Don't worry, be hydrated. You will recover soon." });
+    // Parse the inner JSON string
+    let msgObj;
+    try {
+        msgObj = JSON.parse(body.message);
+    } catch(err) {
+        return res.status(400).json({ text: "Invalid message format" });
+    }
+
+    // Now you can access the text
+    const userText = msgObj.text;
+
+    if(userText === "Fever"){
+        return res.status(200).json({ text: "Don't worry, be hydrated. You will recover soon." });
     } else {
-        res.status(200).json({ text: "Hello from Express!" });
+        return res.status(200).json({ text: "Hello from Express!" });
     }
 });
 
