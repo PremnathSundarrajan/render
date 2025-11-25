@@ -4,7 +4,7 @@ const PORT = 3000;
 
 // Parse JSON body
 app.use(express.json());
-app.post('/bot',(req,res)=>{
+app.get('/bot',(req,res)=>{
     res.status(200).send("prem");
 })
 app.post("/salesiq/webhook", (req, res) => {
