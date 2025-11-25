@@ -45,7 +45,7 @@ app.post("/salesiq/webhook", (req, res) => {
 app.post('/explore/area/book', (req,res)=>{
     body = req.body;
     console.log(body);
-    if(body.place && body.book_slot_here){
+    if(body.place && body.book_a_slot_here){
         res.status(200).send("Booked successfully")
     }else{
         res.status(404).send("Please mention area");
