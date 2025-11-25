@@ -8,9 +8,15 @@ app.get('/',(req,res)=>{
 
 })
 app.post("/salesiq/webhook", (req, res) => {
+    const body = req.body;
+
+    if(bod.messasge == "fever"){
+        res.status(200).send("Don't worry, be hydrated. You will rectify soon");
+    }else{    
     res.status(200).send(
          "Hello from Express"
     );
+    }
 });
 app.listen(PORT,()=>{
     console.log("server is running");
