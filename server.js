@@ -5,7 +5,11 @@ const PORT = 3000;
 // Parse JSON body
 app.use(express.json());
 app.get('/bot',(req,res)=>{
-    res.status(200).send("prem");
+    res.status(200).send("Hi there! 👋 Welcome to UrbPark . I’m here to help you book a parking slot quickly and easily. How can I assist you today?");
+})
+
+app.post('/explore',(req,res)=>{
+    res.status(200).send("Great choice! 🌆 Here are the available parking locations you can explore. Each place includes details like total slots, nearby landmarks, and availability to help you choose the perfect spot. Just select a location to see more information or book a slot instantly!")
 })
 app.post("/salesiq/webhook", (req, res) => {
     const body = req.body;
