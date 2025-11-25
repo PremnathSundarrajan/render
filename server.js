@@ -43,7 +43,7 @@ app.post("/salesiq/webhook", (req, res) => {
 });
 
 app.post('/explore/area/book', (req,res)=>{
-    body = req.body;
+    const body = req.body;
     console.log(body);
     if(body.place && body.book_a_slot_here){
         res.status(200).send("Booked successfully")
