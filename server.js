@@ -12,7 +12,8 @@ app.post("/salesiq/webhook", (req, res) => {
         return res.status(400).json({ text: "Invalid request" });
     }
 
-    if(body.message === "Fever"){
+    if(body === {message=Fever}
+){
         res.status(200).json({ text: "Don't worry, be hydrated. You will recover soon." });
     } else {
         res.status(200).json({ text: "Hello from Express!" });
