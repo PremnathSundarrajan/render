@@ -11,11 +11,9 @@ app.post("/salesiq/webhook", (req, res) => {
     const body = req.body;
 
     if(body.message == "Fever"){
-        res.status(200).send("Don't worry, be hydrated. You will rectify soon");
-    }else{    
-    res.status(200).send(
-         "Hello from Express"
-    );
+        res.status(200).json({ text: "Don't worry, be hydrated. You will recover soon." });
+    } else {    
+        res.status(200).json({ text: "Hello from Express!" });
     }
 });
 app.listen(PORT,()=>{
