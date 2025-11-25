@@ -15,7 +15,7 @@ app.post('/explore',(req,res)=>{
 app.post('/explore/area',(req,res)=>{
     body = req.body;
     console.log(body);
-    res.status(200).send("20 parking areas");
+    res.status(200).send(`${body.message} has 20 parking areas`);
 })
 app.post("/salesiq/webhook", (req, res) => {
     const body = req.body;
