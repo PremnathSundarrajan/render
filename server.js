@@ -69,7 +69,7 @@ app.post('/explore/area/chrompet', (req,res)=>{
 });
 app.post('/explore/area/book',(req,res)=>{
     const body = req.body;
-    
+    console.log(body);
     if(body.book_a_slot_here && body.book_a_slot_here == "Tambaram"){
         res.status(200).send("Booked Tambaram slot successfully");
     }else if (body.book_a_slot_here && body.book_a_slot_here =="Chrompet"){
