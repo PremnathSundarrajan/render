@@ -72,7 +72,7 @@ app.post('/explore/area/book',(req,res)=>{
     console.log(body);
     if(body.area && body.area == "Tambaram"){
         res.status(200).send("Booked Tambaram slot successfully");
-    }else if (body.book_a_slot_here && body.book_a_slot_here =="Chrompet"){
+    }else if (body.area && body.area=="Chrompet"){
          res.status(200).send("Booked Chrompet slot Successfully");
     }else{
          res.status(404).send("Please mention area")
