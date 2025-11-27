@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoho SalesIQ Visitor ID Test</title>
+
+    <!-- 1. The Zoho SalesIQ Async Installation Snippet (FIXED URL) -->
+      <script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siq432810251110ab8fa1526b5b918a80f6ca4a6de27ee9e3572852a9858c9dc685" defer></script>
+    <script>
+        var $zoho = $zoho || {};
+        $zoho.salesiq = $zoho.salesiq || {
+            widgetcode: "siq432810251110ab8fa1526b5b918a80f6ca4a6de27ee9e3572852a9858c9dc685",
+            loadImmediately: true
+        };
+        var d = document;
+        var s = d.createElement("script");
+        s.type = "text/javascript";
+        s.id = "zsiqscript";
+        s.defer = true;
+        // THIS IS THE CORRECT, ABSOLUTE URL:
+        s.src = "salesiq.zohopublic.in"; 
+        var t = d.getElementsByTagName("script");
+        t.parentNode.insertBefore(s, t);
+    </script>
+    
+    <!-- 2. Your custom logic that waits for SalesIQ to be ready -->
+    <script>
+        $zoho.salesiq.ready = function() {
+            var visitorId = $zoho.salesiq.visitor.uniqueuserid();
+            console.log("SUCCESS: SalesIQ Visitor ID is: ", visitorId);
+        };
+    </script>
+
+</head> 
+<body>
+
+    <h2>Check your browser console (F12) for the Visitor ID</h2>
+
+</body>
+</html>
