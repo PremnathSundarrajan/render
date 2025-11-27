@@ -14,23 +14,9 @@
     <script>
         // Use the $zoho.salesiq.ready callback to ensure the API is fully loaded
         $zoho.salesiq.ready = function() {
-            try {
-                // Get the visitor object
-                const visitorInfo = $zoho.salesiq.visitor.info.getVisitor();
-                console.log(visitorInfo);
-                // Use the standard 'id' property
-                const visitorId = visitorInfo.id; 
-
-                if (visitorId) {
-                    console.log("SUCCESS: SalesIQ Visitor ID is: ", visitorId);
-                    // You can now safely pass this visitorId to your backend login endpoint
-                } else {
-                    console.log("WARNING: SalesIQ is ready, but Visitor ID (visitorInfo.id) is not yet available.");
-                }
-            } catch (error) {
-                console.error("Error retrieving SalesIQ Visitor ID:", error);
-            }
-        };
+            $zoho.salesiq.visitor.id("67465746");
+    
+        }
     </script>
 
 </body>
